@@ -213,7 +213,7 @@ ttf-liberation ttf-droid ttf-inconsolata ttf-roboto terminus-font ttf-font-aweso
 ```
 # Install Sound Drivers and Tools
 ```bash
-sudo pacman -S alsa-utils alsa-plugins alsa-lib pavucontrol
+sudo pacman -S alsa-utils alsa-plugins alsa-lib pavucontrol numlockx
 ```
 # Install i3
 ```bash
@@ -237,7 +237,12 @@ git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
 ```
-
+# Enable numlock by default
+```bash
+cat /etc/lightdm/lightdm.conf
+[Seat:*]
+greeter-setup-script=/usr/bin/numlockx on
+```
 # Reboot
 
 # Testing Sound and Configuration
